@@ -1,0 +1,101 @@
+/*
+Michele Laramore
+AVF 1309
+*/
+
+
+.ui-bar-c {
+border : #a02023 solid 1px;
+color : #cfc895;
+font-weight : bold;
+text-shadow : 0 1px 0 #444444;
+}
+
+.ui-page.ui-body-c {
+background : #f0b24b;
+}
+
+header.ui-header.ui-bar-c {
+background : #a02023;
+}
+
+li {
+list-style-type : none;
+}
+
+ul #dishlist li.dishes {
+font-weight : bold;
+height : 10%;
+}
+
+h1 {
+padding-left : 2%;
+color : #a02023;
+text-shadow : 0.1em 0.1em 0.2em black;
+font-weight : bold;
+height : 15%;
+}
+
+h1.ui-title {
+color : #cfc895;
+}
+
+img.header {
+padding-left : 2%;
+padding-right: 2%;
+max-width: 100%;
+}
+
+li.ui-field-contain.ui-body {
+background : #f0b24b;
+}
+
+a.ui-btn.ui-btn-inline {
+background : #a02023;
+}
+
+.ui-btn-text {
+color : #cfc895;
+text-shadow : 0.1em 0.1em 0.2em #000000;
+}
+
+p {
+	margin-left: 4%;
+	margin-right: 4%;
+	 text-shadow: 0px 2px 4px #000000;
+    color: #cfc895;
+}
+
+h2 {
+	color: #CF6D2D;
+	text-shadow: 0px 2px 4px #000000;
+	margin-left: 2%;
+}
+
+.ui-btn-inner{
+	background: #a02023;
+}
+
+.ui-collapsible-content.ui-body-c {
+	background: #F0BD6D;
+}
+
+ul li{
+	margin: 3%;
+	text-shadow: 0px 2px 4px #000000;
+    color: #cfc895;
+}
+
+ol li {
+	margin: 3%;
+	 text-shadow: 0px 2px 4px #000000;
+    color: #cfc895;
+}
+
+a.ui-link{ 
+	color: #CFC895; 
+} 
+
+#last {
+	margin-bottom: 3%;
+}
