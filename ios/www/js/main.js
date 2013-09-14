@@ -207,7 +207,7 @@ $(document).on('pageinit', '#add', function (e) {
 
     var tag = "dishes_pics";
 
-    var url ="https://api.instagram.com/v1/tags" + tag + "media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
+    var url ="https://api.instagram.com/v1/tags" + tag + "/media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
     
 
     $.getJSON(url, screenOutput); 
