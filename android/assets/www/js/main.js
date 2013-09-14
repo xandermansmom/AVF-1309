@@ -216,7 +216,6 @@ $(document).on('pageinit', '#view', function () {
                         "<p>" + fd.value.favorite + "</p>" +
                         "<p>" + fd.value.comment + "</p>" +
                         '</div>').appendTo('#jsonContent');
-                    console.log('JSON loaded');
                     console.log(data);
                 });
             },
@@ -225,207 +224,27 @@ $(document).on('pageinit', '#view', function () {
             }
         });
     };
-    
-     $.couch.db('asd').view('app/dishes', {
-                success: function (data) {
-                    console.log(data.rows);
-                    if (data.rows.length === 0) {
-                        autoFillData();
-                        alert("There is no saved data so sample data was added.");
-                    }
-                    $.each(data.rows, function (index, dishes) {
-                        var id = dishes.value.id;
-                        var rev =dishes.value.rev;
-                        var createSubList = $('<ul>');
-                        var dish =dishes.value.dish;
-                        var rating = dishes.value.rating;
-                        var restaurant = dishes.value.restaurant;
-                        var favorite = dishes.value.favorite;
-                        var comment = dishes.value.comment;
-                        $('ul #dishlist').append('<li>' + dish + '</li>');
-                        $('ul #dishlist').append('<li>' + rating + '</li>');
-                        $('ul #dishlist').append('<li>' + restaurant + '</li>');
-                        $('ul #dishlist').append('<li>' + favorite + '</li>');
-                        $('ul #dishlist').append('<li>' + comment + '</li>');
-                        
- createSubList.append("#dishlist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#dishlist"));
+
+///INSTAGRAM
+ 
+ $('#instagram').on('pageinit', function() {
+     var screenOutput = function(info){
+        console.log(info);
+
+    $("#data-msg").html("<h2>Instagram results:</h2");
+
+
+    $.each(info.data, function(index, photo) {
+
+    var pic = "<img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "' />" + "<h4>" + photo.user.full_name + ", <em>(" + photo.user.username +")</em></h4>";
+        $("#data-output").append(pic);
+    }); 
+};
+
+
+    var tag = "dishes_pics";
+
+    var url ="https://api.instagram.com/v1/tags" + tag + "media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
+    $.getJSON(url, screenOutput);
 });
-
-    $.couch.db('asd').view('app/appetizer', {
-        success: function (data) {
-            console.log(data.rows);
-            if (data.rows.length === 0) {
-                autoFillData();
-                alert("There is no saved data so sample data was added.");
-            }
-
-            $.each(data.rows, function (index, appetizer) {
-                var id = appetizer.value.id;
-                var rev = appetizer.value.rev;
-                var createSubList = $('<ul>');
-                var dish = appetizer.value.dish;
-                var rating = appetizer.value.rating;
-                var restaurant = appetizer.value.restaurant;
-                var favorite = appetizer.value.favorite;
-                var comment = appetizer.value.comment;
-                $('ul #applist').append('<li>' + dish + '</li>');
-                $('ul #applist').append('<li>' + rating + '</li>');
-                $('ul #applist').append('<li>' + restaurant + '</li>');
-                $('ul #apphlist').append('<li>' + favorite + '</li>');
-                $('ul #applist').append('<li>' + comment + '</li>');
-
-                createSubList.append("#applist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#applist"));
-
-            });
-
-            $.couch.db('asd').view('app/main_course', {
-                success: function (data) {
-                    console.log(data.rows);
-                    if (data.rows.length === 0) {
-                        autoFillData();
-                        alert("There is no saved data so sample data was added.");
-                    }
-                    $.each(data.rows, function (index, main_course) {
-                        var id = main_course.value.id;
-                        var rev = main_course.value.rev;
-                        var createSubList = $('<ul>');
-                        var dish = main_course.value.dish;
-                        var rating = main_course.value.rating;
-                        var restaurant = main_course.value.restaurant;
-                        var favorite = main_course.value.favorite;
-                        var comment = main_course.value.comment;
-                        $('ul #mainlist').append('<li>' + dish + '</li>');
-                        $('ul #mainlist').append('<li>' + rating + '</li>');
-                        $('ul #mainlist').append('<li>' + restaurant + '</li>');
-                        $('ul #mainlist').append('<li>' + favorite + '</li>');
-                        $('ul #mainlist').append('<li>' + comment + '</li>');
-                        
- createSubList.append("#mainlist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#mainlist"));
-
-                        editButton.on('click', function (id, rev) {
-                            $.couch.db("asd").openDoc(id, {
-                                success: function (data) {
-                                    editKey = {
-                                         _id: editKey._id,
-                                         _rev: editKey._rev 
-                                    };
-                                    console.log(editKey);
-                                    $("#dish").val(rating);
-                                    $("#restaurant").val(restaurant);
-                                    $("#favorite").val(favorite);
-                                    $("#comment").val(comment);
-                                    console.log(editKey);
-                                }
-                            });
-                        });
-                    });
-                }
-            });
-
-
-            deleteButton.on('click', function (id, rev) {
-                editKey = {
-                    _id: editKey._id,
-                    _rev: editKey._rev 
-                };
-                console.log(editKey);
-                var ask = confirm("Are you sure you want to delete this Record?");
-                if (ask) {
-                    $.couch.db("asd").removeDoc(editKey, {
-                        success: function (data) {
-                            editKey = null;
-
-                            window.location.reload("#");
-                        }
-                    });
-                }
-            });
-           
-        }
-    });
-
-    $.couch.db('asd').view('app/side_order', {
-        success: function (data) {
-            console.log(data.rows);
-            if (data.rows.length === 0) {
-                autoFillData();
-                alert("There is no saved data so sample data was added.");
-            }
-            $.each(data.rows, function (index, side_order) {
-                var id = side_order.value.id;
-                var rev = side_order.value.rev;
-                var createSubList = $('<ul>');
-                var dish = side_order.value.dish;
-                var rating = side_order.value.rating;
-                var restaurant = side_order.value.restaurant;
-                var favorite = side_order.value.favorite;
-                var comment = side_order.value.comment;
-                $('ul #sidelist').append('<li>' + dish + '</li>');
-                $('ul #sidelist').append('<li>' + rating + '</li>');
-                $('ul #sidelist').append('<li>' + restaurant + '</li>');
-                $('ul #sidelist').append('<li>' + favorite + '</li>');
-                $('ul #sidelist').append('<li>' + comment + '</li>');
-                createSubList.append("#sidelist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#sidelist"));
-
-            });
-           }
-      });
-            $.couch.db('asd').view('app/soups_and_salads', {
-                success: function (data) {
-                    console.log(data.rows);
-                    if (data.rows.length === 0) {
-                        autoFillData();
-                        alert("There is no saved data so sample data was added.");
-                    }
-                    $.each(data.rows, function (index, soups_and_salads) {
-                        var id = soups_and_salads.value.id;
-                        var rev = soups_and_salads.rev;
-                        var createSubList = $('<ul>');
-                        var dish = soups_and_salads.value.dish;
-                        var rating = soups_and_salads.value.rating;
-                        var restaurant = soups_and_salads.value.restaurant;
-                        var favorite = soups_and_salads.value.favorite;
-                        var comment = soups_and_salads.value.comment;
-                        $('ul #sslist').append('<li>' + dish + '</li>');
-                        $('ul #sslist').append('<li>' + rating + '</li>');
-                        $('ul #sslist').append('<li>' + restaurant + '</li>');
-                        $('ul #sslist').append('<li>' + favorite + '</li>');
-                        $('ul #sslist').append('<li>' + comment + '</li>');
-
-                        createSubList.append("#sslist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#sslist"));
-
-                    });
-                }
-            });
-
-                    $.couch.db('asd').view('app/dessert', {
-                        success: function (data) {
-                            console.log(data.rows);
-                            if (data.rows.length === 0) {
-                                autoFillData();
-                                alert("There is no saved data so sample data was added.");
-                            }
-                            $.each(data.rows, function (index, dessert) {
-                                var id = dessert.value.id;
-                                var rev = dessert.value.rev;
-                                var createSubList = $('<ul>');
-                                var dish = dessert.value.dish;
-                                var rating = dessert.value.rating;
-                                var restaurant = dessert.value.restaurant;
-                                var favorite = dessert.value.favorite;
-                                var comment = dessert.value.comment;
-                                $('ul #dessertlist').append('<li>' + dish + '</li>');
-                                $('ul #dessertlist').append('<li>' + rating + '</li>');
-                                $('ul #desserlist').append('<li>' + restaurant + '</li>');
-                                $('ul #dessertlist').append('<li>' + favorite + '</li>');
-                                $('ul #dessertlist').append('<li>' + comment + '</li>');
-                                createSubList.append("#dessertlist").append(editButton).append('<br>').append(deleteButton.append('<br />').appendTo("#dessertlist"));
-
-                            });
-                        }
-                    });
-                    
-                }
-     });
-       
 });
