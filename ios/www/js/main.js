@@ -209,19 +209,12 @@ $(document).on('pageinit', '#add', function (e) {
 
     var url ="https://api.instagram.com/v1/tags" + tag + "media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
     
-<<<<<<< HEAD
-=======
 
     $.getJSON(url, screenOutput); 
->>>>>>> gh-pages
 
      var screenOutput = function(info){
         console.log(info);
 
-<<<<<<< HEAD
-       $.getJSON(url, screenOutput); 
-=======
->>>>>>> gh-pages
 
     $("#data-msg").html("<h2>Instagram results:</h2>");
 
