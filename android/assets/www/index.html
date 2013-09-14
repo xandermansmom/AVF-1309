@@ -33,41 +33,61 @@
     </head>
     
   <body>
+    <!--HOME PAGE-->
+
     <section id="home" data-role="page">
+
       <h1>Michele Laramore  AVF 1309</h1>
-        <div><img class = "header" src="images/APPetizing-header-3.png" alt = "App-etizing foods"></div>
 
-        <div data-role="collapsible" data-theme="c" data-content-theme="c">
-        <h3>Add & View</h3>
+        <div>
+            <!--HEADER IMAGE-->
+            <img class = "header" src="images/APPetizing-header-3.png" alt = "App-etizing foods">
+        </div>
 
-         <!--Add Button--> <a href="#add" data-role="button" data-icon="plus" data-theme="c" data-ajax="false">Add a Dish</a>
-         <!--View List Button--> <a href="#view" data-role="button" data-icon="info" data-theme="c" data-ajax="false">View List</a>
+        <div data-role="collapsible" data-collapsed="true" data-theme="c" data-content-theme="c">
+
+            <h3>Add & View</h3>
+
+                 <!--ADD BUTTON-->
+                 <a href="#add" data-role="button" data-icon="plus" data-theme="c" data-ajax="false">Add a Dish</a>
+
+                <!--VIEW LIST BUTTON-->
+                <a href="#view" data-role="button" data-icon="info" data-theme="c" data-ajax="false">View List</a>
         </div>
 
 
-        <div data-role="collapsible" data-theme="c" data-content-theme="c">
-        <h3>API's</h3>
+        <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
 
-         <!--Instagram--><a href="#instagram" data-role="button" data-theme="c" data-ajax="false">Instagram</a>
+             <h3>API's</h3>
 
-        <!--MapQuest--><a href="#mapquest" data-role="button" data-theme="c" data-ajax="false">MapQuest</a> 
+                <!--INSTAGRAM-->
+                <a href="#instagram" data-role="button" data-theme="c" data-ajax="false">Instagram</a>
+
+                <!--MAPQUEST-->
+                <a href="#mapquest" data-role="button" data-theme="c" data-ajax="false">MapQuest</a> 
         </div>
 
 
-        <div data-role="collapsible" data-theme="c" data-content-theme="c">
-        <h3>Discussion Topics</h3>
+        <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
+
+            <h3>Discussion Topics</h3>
 
 
-        <!--Project Intent--><a href="#intent" data-role="button" data-theme="c" data-ajax="false">Project Intent</a>
+                 <!--PROJECT INTENT-->
+                 <a href="#intent" data-role="button" data-theme="c" data-ajax="false">Project Intent</a>
 
-        <!--Accessibility--><a href="#accesibility" data-role="button" data-theme="c" data-ajax="false">Accessiblity</a>
+                <!--ACCESIBILITY-->
+                <a href="#accesibility" data-role="button" data-theme="c" data-ajax="false">Accessiblity</a>
 
                     
-        <!--Industry Research--><a href="#research" data-role="button" data-theme="c" data-ajax="false">Industry Research</a>
+                <!--INDUSTRY RESEARCH-->
+                <a href="#research" data-role="button" data-theme="c" data-ajax="false">Industry Research</a>
         </div>
 
 
         <footer data-role="footer" data-position="fixed" data-theme="c">
+
+            <!--NAVBAR-->
             <section data-role="navbar">
                 <ul>
                     <li><a href="#home"  class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
@@ -79,16 +99,22 @@
                     <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
 
                 </ul>
-            <!-- /navbar -->
-        </section>
+           </section>
+           <!--/NAVBAR -->
         </footer>
-        <!--/footer-->
+        <!--/FOOTER-->
+
     </section>
+
+    <!--ADD PAGE-->
+
     <section id="add" data-role="page" data-add-back-btn="true">
+
         <header data-role="header" data-theme="c">
              <h1>Add a Dish</h1>
-
         </header>
+
+        <!--FORM-->
         <form action="#" method="post" id="addForm">
             <ul data-role="listview">
                 <li data-role="fieldcontain">
@@ -129,15 +155,20 @@
                     <textarea cols="40" rows="8" name="comment" id="comment" placeholder="Record your comments here." class="required" ></textarea>
                 </li>
             </ul>
-            <!-- Save and Reset Buttons -->
+            <!--/FORM>
+
+            <!-SAVE AND RESET BUTTONS-->
             <input type="submit" value="Save" id="save" data-icon="star" data-inline="true" data-theme="c" />
             <input type="reset" value="Reset" id="reset" data-icon="refresh" data-inline="true" data-theme="c" />
         </form>
 
+        <!--FOOTER-->
         <footer data-role="footer" data-position="fixed" data-theme="c">
+            <!--NAVBAR-->
+               <!--NAVBAR-->
             <section data-role="navbar">
                 <ul>
-                    <li><a href="#home" data-icon="home" class="ui-btn-active" data-transition="fade" data-inline="true">Home</a>
+                    <li><a href="#home"  class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
 
                     </li>
                     <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
@@ -145,27 +176,33 @@
                     </li>
                     <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
 
-                    </li>
                 </ul>
-            </section>
-            <!-- /navbar -->
+           </section>
+           <!--/NAVBAR -->
         </footer>
-        <!--/footer-->
+        <!--/FOOTER-->
     </section>
+
+    <!--VIEW PAGE-->
     <section id="view" data-role="page" data-add-back-btn="true">
+
         <header data-role="header" data-theme="c">
              <h1>View List</h1>      
         </header>
     
- 
+        <!--DISPLAY DATA-->
         <section data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true">
 
             
               
                 
         </section>
+        <!--/END DISPLAY DATA-->
 
+        <!--FOOTER-->
         <footer data-role="footer" data-position="fixed" data-theme="c">
+
+            <!--NAVBAR-->
             <section data-role="navbar">
                 <ul>
                     <li><a href="#home" data-icon="home" class="ui-btn-active" data-transition="fade" data-inline="true">Home</a>
@@ -177,14 +214,16 @@
 
                 </ul>
             </section>
+            <!-- /NAVBAR -->
 
-            <!-- /navbar -->
         </footer>
-        <!--/footer-->
+        <!--/FOOTER-->
     </section>
 
 
+    <!--DISCUSSION POST - WEEK 1-->
     <section id="intent" data-role="page" data-add-back-btn="true">
+
         <header data-role="header" data-theme="c">
              <h1>Project Intent</h1>
         </header>
@@ -193,7 +232,7 @@
 
              <p>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?<p>
 
-            <p>Some perks of using Twitter login with your app is explained in Twitter’s developer documentation at <a href ="https://dev.twitter.com/docs/auth/sign-twitter">https://dev.twitter.com/docs/auth/sign-twitter.</a></p>
+            <p>Some perks of using Twitter login with your app is explained in Twitter‚Äôs developer documentation at <a href ="https://dev.twitter.com/docs/auth/sign-twitter">https://dev.twitter.com/docs/auth/sign-twitter.</a></p>
 
 
         <h2>Logins</h2>
@@ -209,19 +248,19 @@
 
         <p>An example of how Twitter is already being used for payments is a startup called Chirpify.</p> 
 
-        <p>Chirpify allows a brand with a following on Twitter to connect its PayPal business account to them and then tweet items for sale through a simple dashboard.  This could include time-sensitive deals or highlighted items that are on sale or need to be moved. When the user replies with a tweet saying they want to buy the product, the money gets deducted from their PayPal account using OAuth permission. If the buyer doesn’t have a PayPal account, they are prompted to set one up and connect it to Chirpify.</p>
+        <p>Chirpify allows a brand with a following on Twitter to connect its PayPal business account to them and then tweet items for sale through a simple dashboard.  This could include time-sensitive deals or highlighted items that are on sale or need to be moved. When the user replies with a tweet saying they want to buy the product, the money gets deducted from their PayPal account using OAuth permission. If the buyer doesn‚Äôt have a PayPal account, they are prompted to set one up and connect it to Chirpify.</p>
 
 
         <p>Why would we need JSON-P, specifically?
-        JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what API’s do, access data outside the website, this makes JSONP important to us as developers.</p>
+        JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what API‚Äôs do, access data outside the website, this makes JSONP important to us as developers.</p>
 
 
         <p>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
 
        <ol> 
-       <li> Camera – Instagram, TwitPic, Flickr </li>
+       <li> Camera ‚Äì Instagram, TwitPic, Flickr </li>
        <li>Geolocation or GPS  - AlterGeo, GeoNames, GeoCoda, GeoMaker, MapQuest</li>
-        <li>Storage – Google Drive, DropBox, Apple iCloud</li>
+        <li>Storage ‚Äì Google Drive, DropBox, Apple iCloud</li>
         </ol>
 
         <p>Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
@@ -236,13 +275,15 @@
 
         <p>As far as research is concerned, I learned the trusted resources to search for answers. One of my favorites is StackOverflow and of course, the FSO Facebook group when I have trouble finding answers to my questions.</p>
 
-        <p>When it comes to design, I’m engaged to a graphic designer with 18 years experience in the profession and he has taught me that in order to be successful, you create multiple images very quickly and settle on the best, never second guessing your choice because in the past, I have spent countless hours working and creating images and graphics for my app, only to second guess myself and start over. This process would put me behind deadline so I have learned to take his advice when it comes to graphics and design.</p>
+        <p>When it comes to design, I‚Äôm engaged to a graphic designer with 18 years experience in the profession and he has taught me that in order to be successful, you create multiple images very quickly and settle on the best, never second guessing your choice because in the past, I have spent countless hours working and creating images and graphics for my app, only to second guess myself and start over. This process would put me behind deadline so I have learned to take his advice when it comes to graphics and design.</p>
 
         <p id= "last">You should have a clear idea where you are going with your app so jotting down criteria for your app and researching how to meet that criteria before you actually start developing your app is beneficial.</p> 
 
      
-
+       <!--FOOOTER-->
        <footer data-role="footer" data-position="fixed" data-theme="c">
+
+            <!--NAVBAR-->
             <section data-role="navbar">
                 <ul>
                     <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
@@ -252,11 +293,49 @@
                     <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
                 </ul>
             </section>
+            <!-- /NAVBAR -->
 
-            <!-- /navbar -->
         </footer>
-        <!--/footer-->
+        <!--/FOOTER-->
+
       </section>
+
+      <!--INSTAGRAM-->
+
+          <section id="instagram" data-role="page" data-add-back-btn="true">
+
+        <h1>Michele Laramore  AVF 1309</h1>
+ 
+
+        <div>
+            <!--HEADER IMAGE-->
+            <img class = "header" src="images/APPetizing-header-3.png" alt = "App-etizing foods">
+        </div>
+
+        <ul id="data-output">
+            <li id="data-msg"><h2>Searching Instagram...</h2></li>
+        </ul>
+
+         <!--FOOOTER-->
+       <footer data-role="footer" data-position="fixed" data-theme="c">
+
+            <!--NAVBAR-->
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                </ul>
+            </section>
+            <!-- /NAVBAR -->
+
+        </footer>
+        <!--/FOOTER-->
+
+      </section>
+
 
    <!--jQuery, jQuery Mobile, JavaScript-->
     
