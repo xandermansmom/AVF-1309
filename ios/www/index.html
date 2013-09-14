@@ -251,11 +251,12 @@
         <p>Chirpify allows a brand with a following on Twitter to connect its PayPal business account to them and then tweet items for sale through a simple dashboard.  This could include time-sensitive deals or highlighted items that are on sale or need to be moved. When the user replies with a tweet saying they want to buy the product, the money gets deducted from their PayPal account using OAuth permission. If the buyer doesn‚Äôt have a PayPal account, they are prompted to set one up and connect it to Chirpify.</p>
 
 
-        <p>Why would we need JSON-P, specifically?
-        JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what API‚Äôs do, access data outside the website, this makes JSONP important to us as developers.</p>
+        <strong>Why would we need JSON-P, specifically?</strong>
+        
+        <p>JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what API‚Äôs do, access data outside the website, this makes JSONP important to us as developers.</p>
 
 
-        <p>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
+        <strong>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</strong>
 
        <ol> 
        <li> Camera ‚Äì Instagram, TwitPic, Flickr </li>
@@ -300,6 +301,94 @@
 
       </section>
 
+    <!--DISCUSSION POST - WEEK 2-->
+         <section id="accessibility" data-role="page" data-add-back-btn="true">
+
+        <header data-role="header" data-theme="c">
+             <h1>Accessibility</h1>
+        </header>
+
+       <strong>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with JQuery, for instance)</strong>
+
+        <p>Since Full Sail has always taught us how to build our apps to meet accessibility criteria, I don't really see anything that could improve my app's accessibility. I've always provided alt text with my images, used well-positioned labels on my form fields, etc.<p>
+ 
+        <strong>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</strong>
+
+        <p>Some issues or frustrations that arise using a screen reader are:</p>
+            
+        <oL>
+            <li>No alt text for pictures </li>
+            <li>Nondescriptive alt text</li>
+            <li>No skip navigation</li>
+            <li>Poorly designed/unlabeled form</li>
+            <li>Mouse required for navigation</li> 
+            <li>Page layout causing confusing screen reader feedback</li> 
+            <li>Pop-up frustration</li>
+            <li>table won’t read linearly</li> 
+            <li>Screen reader crash</li> 
+            <li>Conflict between screen reader and application</li>
+        </ol> 
+
+        <p>Most of these issues can be fixed by just keeping a handy list of what not to do like for example (no alt text for images) just be sure to include alt text for your images and make sure the alt text is descriptive enough.  The rest is pretty much the same. Being aware of possible issues that can arise and avoiding it.</p>
+
+        <strong>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.
+
+        iOS 5 has some accessibility features such as the following:</strong>
+
+            <p>VoiceOver - a system that allows people with visual impairments to navigate the touchscreen of an iOS device. Switch it on and your iOS device speaks to you, telling you what’s under your fingers as you touch areas of the device.</p>
+
+            <p>Zoom - Enable it and you can zoom the screen by double tapping with three fingers. To zoom out, use this same gesture. To move around a zoomed screen, drag three fingers.</p>
+
+            <p>Large Text – Enlarges text for your app.</p>
+
+            <p>AssistiveTouch - Tap it, and a gray overlay window appear from which you can select Gestures, Device, Home, and Favorites icons.</p>
+
+
+        <strong>Android has some of the following accessibility features:</strong>
+
+            <p>Text-to-speech - synthesizes speech from text for immediate playback or to create a sound file.</p>
+
+            <p>Haptic feedback – a tacile feedback technology which takes advantage of the sense of touch by applying forces, vibrations, or motions to the user.</p>
+
+            <p>Gesture navigation - gestures allow users to interact with your app by manipulating the screen objects you provide.</p> 
+
+            <p>Trackball and directional-pad navigation – clickable trackball that users can move in any director. A clickable d-pad that allows users to navigate in four directions.</p>
+                
+        <strong>Android developers can also build their own accessibility services, which can provide enhanced usability features such as:</strong>
+
+        <ul>
+            <li>Audio prompting</li> 
+            <li>Physical feedback</li> 
+            <li>Alternative navigation modes</li> 
+        </ul>
+
+        <strong>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</strong>
+
+            <p>Mobile Accessibility is a screen-access application which allows people who are blind or have low vision to use an Android phone in an intuitive, easy and simple way.</p>
+
+            <p>VoiceOver is a gesture-based screen reader that lets you enjoy the fun and simplicity of iOS even if you can’t see the screen.</p>
+
+  <!--FOOOTER-->
+       <footer data-role="footer" data-position="fixed" data-theme="c">
+
+            <!--NAVBAR-->
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                </ul>
+            </section>
+            <!-- /NAVBAR -->
+
+        </footer>
+        <!--/FOOTER-->
+
+      </section>
+
+
       <!--INSTAGRAM-->
 
           <section id="instagram" data-role="page" data-add-back-btn="true">
@@ -337,8 +426,8 @@
 
     
   <!--jQuery, jQuery Mobile, JavaScript-->
-    <script src="js/phonegap.js"></script>
     <script src="js/jquery-2.0.3.min.js"></script> 
+    <script src="js/phonegap.js"></script>
     <script src="js/main.js"></script>     
      <script src="js/jquery.mobile-1.3.2.min.js"></script>
     <script src="js/libs/jquery.validate.js"></script>
