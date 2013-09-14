@@ -205,14 +205,15 @@ $(document).on('pageinit', '#add', function (e) {
  
  $('#instagram').on('pageinit', function() {
 
-    var tag = "dishes_pics";
+    var tag = "dishes_pics",
 
-    var url ="https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
+        url ="https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
     
 
-    $.getJSON(url, screenOutput); 
-
      var screenOutput = function(info){
+
+        $.getJSON(url, screenOutput); 
+
         console.log(info);
 
 
@@ -221,7 +222,7 @@ $(document).on('pageinit', '#add', function (e) {
 
     $.each(info.data, function(index, photo) {
 
-    var pic = "<img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "<h4>" + photo.user.full_name + ", <em>(" + photo.user.username +")</em></h4>";
+    var pic = "<li><img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "<h4>" + photo.user.full_name + ", <em>(" + photo.user.username +")</em></h4></li>";
         
         $("#data-output").append(pic);
     }); 
