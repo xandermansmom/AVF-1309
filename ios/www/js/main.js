@@ -225,6 +225,7 @@ $(document).on('pageinit', '#view', function () {
         });
     };
 
+<<<<<<< HEAD
 //INSTAGRAM
  
  //INSTAGRAM
@@ -253,4 +254,34 @@ $(document).on('pageinit', '#view', function () {
 
 
    
+=======
+
+//INSTAGRAM
+ 
+ $('#instagram').on('pageinit', function() {
+
+    var tag = "dishes_pics";
+
+    var url ="https://api.instagram.com/v1/tags" + tag + "media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
+    $.getJSON(url, screenOutput);
+
+     var screenOutput = function(info){
+        console.log(info);
+
+    $("#data-msg").html("<h2>Instagram results:</h2>");
+
+
+    $.each(info.data, function(index, photo) {
+
+    var pic = "<img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "<h4>" + photo.user.full_name + ", <em>(" + photo.user.username +")</em></h4>";
+        
+        $("#data-output").append(pic);
+    }); 
+};
+
+
+    
+});
+});
+>>>>>>> gh-pages
 
