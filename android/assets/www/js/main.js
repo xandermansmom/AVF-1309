@@ -227,8 +227,7 @@ $(document).on('pageinit', '#add', function (e) {
     }); 
 };
 
-
     
 });
-});
+
 
