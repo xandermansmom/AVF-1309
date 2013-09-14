@@ -104,6 +104,10 @@ figure, info{
 display: block;
 }
 
+figure, info{
+display: block;
+}
+
 #polaroid{
 max-width: 50%;
 /*overflow:hidden;*/
