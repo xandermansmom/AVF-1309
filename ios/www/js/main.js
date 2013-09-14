@@ -201,18 +201,17 @@ $(document).on('pageinit', '#add', function (e) {
 //VIEW
 
 
-//INSTAGRAM
+ //INSTAGRAM
  
- $('#instagram').on('pageinit', function() {
+  $('#instagram').on('pageinit', function() {
 
     var tag = "dishes_pics",
 
-        url ="https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
+         url ="https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53",
     
 
-     var screenOutput = function(info){
+        screenOutput = function(info){
 
-        $.getJSON(url, screenOutput); 
 
         console.log(info);
 
@@ -227,8 +226,11 @@ $(document).on('pageinit', '#add', function (e) {
         $("#data-output").append(pic);
     }); 
 };
+        $.getJSON(url, screenOutput); 
 
     
 });
+
+
 
 
