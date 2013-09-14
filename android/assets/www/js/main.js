@@ -221,8 +221,7 @@ $(document).on('pageinit', '#add', function (e) {
 
     $.each(info.data, function(index, photo) {
 
-  var pic = "<li><img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id  + "/><h4>" + photo.user.full_name + ", <em>(" + photo.user.username +")</em></h4></li>";
-        
+var pic = "<figure><img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "' />" + "<h3>" + photo.user.full_name  + photo.likes.count + " </h3>" + "</figure>";        
         $("#data-output").append(pic);
     }); 
 };
