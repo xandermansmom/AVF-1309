@@ -106,14 +106,14 @@ display: block;
 
 #polaroid{
 max-width: 50%;
-overflow:hidden;
+/*overflow:hidden;*/
 padding:20px 10px;
 }
 
 #polaroid figure{
 float:left;
 position:relative;
-max-width:25%;
+max-width:100%;
 margin:20px 30px;
 padding: 6px 10px 10px 8px;
 -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
@@ -130,14 +130,12 @@ background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
 -o-transform: rotate(-1deg);
 -ms-transform: rotate(-1deg);
 transform: rotate(-1deg);
--webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
+-webkit-backface-visibility:hidden; 
 }
 
 #polaroid figure.img {
-	max-width: 25%;
+	max-width: 50%;
 }
-
-
 
 #polaroid figure:nth-child(even) {
 -webkit-transform:rotate(2deg);
@@ -145,7 +143,7 @@ transform: rotate(-1deg);
 -o-transform: rotate(2deg);
 -ms-transform: rotate(2deg);
 transform: rotate(2deg);
--webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
+-webkit-backface-visibility:hidden; 
 -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
 -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
 box-shadow: -4px 4px 8px -4px rgba(0, 0, 0, .75);
@@ -183,11 +181,4 @@ font-size:1.3em;
 color:#454f40;
 letter-spacing:0.09em;
 }
-/**IE Hacks - see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version**/
-#polaroid figure{
--pie-background: linear-gradient(#ede1c9, #fef8e2 20%, #f2ebde 60%);
-behavior: url(assets/pie/PIE.htc);
-position:relative; /*required to make PIE work*/
-padding-top:10px\9;
-padding-right:10px\9;
-}
+
