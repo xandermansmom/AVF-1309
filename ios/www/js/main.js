@@ -199,31 +199,6 @@ $(document).on('pageinit', '#add', function (e) {
 });
 
 //VIEW
-$(document).on('pageinit', '#view', function () {
-
-    var autoFillData = function () {
-        $.couch.db("asd").view("app/asd", {
-            success: function (data) {
-                console.log(data);
-                var createSubList = $('<div>');
-                $.each(data.rows, function (index, fd) {
-                    $('' +
-                        '<div class = "content">' +
-                        "<p>" + fd.value.dish + "</p>" +
-                        "<p>" + fd.value.category + "</p>" +
-                        "<p>" + fd.value.rating + "</p>" +
-                        "<p>" + fd.value.restaurant + "</p>" +
-                        "<p>" + fd.value.favorite + "</p>" +
-                        "<p>" + fd.value.comment + "</p>" +
-                        '</div>').appendTo('#jsonContent');
-                    console.log(data);
-                });
-            },
-            error: function (error, parseerror) {
-                console.log('Error: ' + error + '\nParse Error: ' + parseerror);
-            }
-        });
-    };
 
 
 //INSTAGRAM
@@ -234,11 +209,19 @@ $(document).on('pageinit', '#view', function () {
 
     var url ="https://api.instagram.com/v1/tags" + tag + "media/recent?callback=?&amp;client_id=dd55a33c284e4d99b2f703f3e2bdaf53";
     
+<<<<<<< HEAD
+=======
+
+    $.getJSON(url, screenOutput); 
+>>>>>>> gh-pages
 
      var screenOutput = function(info){
         console.log(info);
 
+<<<<<<< HEAD
        $.getJSON(url, screenOutput); 
+=======
+>>>>>>> gh-pages
 
     $("#data-msg").html("<h2>Instagram results:</h2>");
 
