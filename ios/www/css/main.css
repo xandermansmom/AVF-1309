@@ -74,6 +74,7 @@ h2 {
 
 .ui-btn-inner{
 	background: #a02023;
+	position: fixed;
 }
 
 .ui-collapsible-content.ui-body-c {
