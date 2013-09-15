@@ -69,7 +69,7 @@ p {
 h2 {
 	color: #CF6D2D;
 	text-shadow: 0px 2px 4px #000000;
-	margin-left: 2%;
+	text-align: center;
 }
 
 .ui-btn-inner{
@@ -99,3 +99,93 @@ a.ui-link{
 #last {
 	margin-bottom: 3%;
 }
+
+#polaroid{
+max-width: 75%;
+padding:15px 15px;
+}
+
+#polaroid figure{
+float:left;
+position:relative;
+max-width:100%;
+margin:10px 30px;
+padding: 6px 8px 25px 8px;
+-webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+-moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+background: #eee6d8;
+background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+-webkit-transform:rotate(-1deg);
+-moz-transform: rotate(-1deg);
+-o-transform: rotate(-1deg);
+-ms-transform: rotate(-1deg);
+transform: rotate(-1deg);
+-webkit-backface-visibility:hidden; 
+}
+
+/*img*/
+#polaroid img {
+	 width: auto;
+     max-width: 100%;
+}
+
+#polaroid figure:nth-child(even) {
+-webkit-transform:rotate(2deg);
+-moz-transform: rotate(2deg);
+-o-transform: rotate(2deg);
+-ms-transform: rotate(2deg);
+transform: rotate(2deg);
+-webkit-backface-visibility:hidden; 
+-webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+-moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+box-shadow: -4px 4px 8px -4px rgba(0, 0, 0, .75);
+}
+
+
+/*tape*/
+#polaroid figure:before {
+content: '';
+display: block;
+position: relative;
+left:5px;
+top: -15px;
+width: 75px;
+height: 25px;
+background-color: rgba(249,243, 243 ,0.3);
+-webkit-transform: rotate(-12deg);
+-moz-transform: rotate(-12deg);
+-o-transform: rotate(-12deg);
+-ms-transform: rotate(-12deg);
+}
+
+#polaroid figure:nth-child(even):before {
+left:150px;
+top: -15px;
+width: 55px;
+height: 25px;
+-webkit-transform: rotate(12deg);
+-moz-transform: rotate(12deg);
+-o-transform: rotate(12deg);
+-ms-transform: rotate(12deg);
+}
+
+/*text*/
+figure, figcaption{ 
+display: block;
+}
+
+#polaroid figcaption{
+text-align: absolute;
+position: fixed;
+overflow: hidden;
+max-width: 100%;
+color: #a02023;
+padding-bottom: 25%;
+}
+
+
