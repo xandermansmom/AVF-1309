@@ -100,14 +100,6 @@ a.ui-link{
 	margin-bottom: 3%;
 }
 
-figure, info{
-display: block;
-}
-
-figure, info{
-display: block;
-}
-
 #polaroid{
 max-width: 50%;
 /*overflow:hidden;*/
@@ -138,7 +130,8 @@ transform: rotate(-1deg);
 }
 
 #polaroid figure.img {
-	max-width: 50%;
+	max-width:25%;
+	height: auto;
 }
 
 #polaroid figure:nth-child(even) {
@@ -179,10 +172,15 @@ height: 25px;
 -ms-transform: rotate(12deg);
 }
 
-#polaroid info{
-text-align:center;
-font-size:1.3em;
-color:#454f40;
-letter-spacing:0.09em;
+figure, figcaption{ 
+display:block;
 }
+
+#polaroid figcaption{
+text-align: center;
+font-size:1.3em;
+color: #a02023;
+letter-spacing: 0.09em;
+}
+
 
