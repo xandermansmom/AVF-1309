@@ -221,8 +221,7 @@ $(document).on('pageinit', '#add', function (e) {
 
     $.each(info.data, function(index, photo) {
 
-  var pic = "<img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "' />" + "<h3>" + photo.user.full_name + "&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;♥ " + photo.likes.count + " ♥</h3>" + "</li>";
-        
+var pic = "<figure><img src='" + photo.images.standard_resolution.url + "'alt='" + photo.user.id + "' />" + "<h3>" + "<figcaption>" + photo.user.full_name  + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + photo.likes.count + "&nbsp;" + "&hearts;" + "'s" + "</figcaption>" + " </h3>" + "</figure>";        
         $("#data-output").append(pic);
     }); 
 };
