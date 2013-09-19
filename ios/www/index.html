@@ -67,6 +67,22 @@
                     <a href="#googlemaps" data-role="button" data-theme="c" data-ajax="false">Google Maps</a>
                     </div>
                     
+                    <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
+                    <h3>Native Features</h3>
+                    
+                    <!--CAMERA-->
+                    <a href="#camera" data-role="button" data-theme="c" data-ajax="false">Camera</a>
+                    
+                    <!--GEOLOCATION-->
+                    <a href="#geolocation" data-role="button" data-theme="c" data-ajax="false">Geolocation</a>
+                    
+                    <!--ACCELEROMETER-->
+                    <a href="#accelerometer" data-role="button" data-theme="c" data-ajax="false">Accelerometer</a>
+                    
+                    <!--STORAGE-->
+                    <a href="#storage" data-role="button" data-theme="c" data-ajax="false">Storage</a>
+                    
+                    </div>
                     
                     <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
                     
@@ -220,7 +236,206 @@
                     <!--/FOOTER-->
                     </section>
                     
+                    <!--INSTAGRAM-->
                     
+                    <section id="instagram" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Instagram</h1>
+                    </header>
+                                     
+                    <div id = "polaroid">
+                    
+                    <figcaption>
+                    
+                    </figcaption>
+                    
+                    <ul id="data-output">
+                    <li id="data-msg"><h2>Searching Instagram...</h2></li>
+                    </ul>
+                    </div>
+                    
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                    
+                    
+                    <!--GOOGLE MAPS-->
+                    
+                    <section id="googlemaps" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Google Maps</h1>
+                    </header>
+                    
+                    <div id="map-canvas"></div>
+                    
+                    
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                    
+                    
+                    <!--CAMERA-->
+                    
+                    <section id="camera" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Camera</h1>
+                    </header>
+                    
+                    <button onclick="capturePhoto();">Capture Photo</button> <br>
+                    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+                    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+                    <button onclick="getPhoto(pictureSource.PHOTOALBUM);">From Photo Album</button><br>
+                                        
+                                      <!--put image here-->
+                    
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                    
+                    <!--GEOLOCATION-->
+                    
+                    <section id="geolocation" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Geolocation</h1>
+                    </header>
+                    
+                        <p id="geolocation">Watching geolocation...</p>
+                        <button onclick="clearWatch();">Clear Watch</button>
+                        
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                    
+                    <!--ACCELEROMETER-->
+                    
+                    <section id="accelerometer" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Accelerometer</h1>
+                    </header>
+                    
+                        <p>getCurrentAcceleration</p>
+                    
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                    
+                    
+                    <!--STORAGE-->
+                    
+                    <section id="storage" data-role="page" data-add-back-btn="true">
+                    
+                    <header data-role="header" data-theme="c">
+                    <h1>Storage</h1>
+                    </header>
+                    
+                    <!--image here-->
+                    
+                    
+                    <!--FOOTER-->
+                    <footer data-role="footer" data-position="fixed" data-theme="c">
+                    
+                    <!--NAVBAR-->
+                    <section data-role="navbar">
+                    <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                    </ul>
+                    </section>
+                    <!-- /NAVBAR -->
+                    
+                    </footer>
+                    <!--/FOOTER-->
+                    
+                    </section>
+                         
                     <!--DISCUSSION POST - WEEK 1-->
                     <section id="intent" data-role="page" data-add-back-btn="true">
                     
@@ -232,7 +447,7 @@
                     
                     <p>Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?<p>
                     
-                    <p>Some perks of using Twitter login with your app is explained in Twitterâ€™s developer documentation at <a href ="https://dev.twitter.com/docs/auth/sign-twitter">https://dev.twitter.com/docs/auth/sign-twitter.</a></p>
+                    <p>Some perks of using Twitter login with your app is explained in Twitter‚Äôs developer documentation at <a href ="https://dev.twitter.com/docs/auth/sign-twitter">https://dev.twitter.com/docs/auth/sign-twitter.</a></p>
                     
                     
                     <h2>Logins</h2>
@@ -248,20 +463,20 @@
                     
                     <p>An example of how Twitter is already being used for payments is a startup called Chirpify.</p>
                     
-                    <p>Chirpify allows a brand with a following on Twitter to connect its PayPal business account to them and then tweet items for sale through a simple dashboard.  This could include time-sensitive deals or highlighted items that are on sale or need to be moved. When the user replies with a tweet saying they want to buy the product, the money gets deducted from their PayPal account using OAuth permission. If the buyer doesnâ€™t have a PayPal account, they are prompted to set one up and connect it to Chirpify.</p>
+                    <p>Chirpify allows a brand with a following on Twitter to connect its PayPal business account to them and then tweet items for sale through a simple dashboard.  This could include time-sensitive deals or highlighted items that are on sale or need to be moved. When the user replies with a tweet saying they want to buy the product, the money gets deducted from their PayPal account using OAuth permission. If the buyer doesn‚Äôt have a PayPal account, they are prompted to set one up and connect it to Chirpify.</p>
                     
                     
                     <p>Why would we need JSON-P, specifically?</p>
                     
-                    <p>JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what APIâ€™s do, access data outside the website, this makes JSONP important to us as developers.</p>
+                    <p>JSONP is important for developers who want to access data that exists outside the website the user is visiting.  Since that is what API‚Äôs do, access data outside the website, this makes JSONP important to us as developers.</p>
                     
                     
                     <p>Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?</p>
                     
                     <ol>
-                    <li> Camera â Instagram, TwitPic, Flickr </li>
+                    <li> Camera ‚ Instagram, TwitPic, Flickr </li>
                     <li>Geolocation or GPS  - AlterGeo, GeoNames, GeoCoda, GeoMaker, MapQuest</li>
-                    <li>Storageâ Google Drive, DropBox, Apple iCloud</li>
+                    <li>Storage‚ Google Drive, DropBox, Apple iCloud</li>
                     </ol>
                     
                     <p>Please describe any design and functionality intentions you may have for your Demo app components this month.</p>
@@ -276,12 +491,12 @@
                     
                     <p>As far as research is concerned, I learned the trusted resources to search for answers. One of my favorites is StackOverflow and of course, the FSO Facebook group when I have trouble finding answers to my questions.</p>
                     
-                    <p>When it comes to design, Iâ€™m engaged to a graphic designer with 18 years experience in the profession and he has taught me that in order to be successful, you create multiple images very quickly and settle on the best, never second guessing your choice because in the past, I have spent countless hours working and creating images and graphics for my app, only to second guess myself and start over. This process would put me behind deadline so I have learned to take his advice when it comes to graphics and design.</p>
+                    <p>When it comes to design, I‚Äôm engaged to a graphic designer with 18 years experience in the profession and he has taught me that in order to be successful, you create multiple images very quickly and settle on the best, never second guessing your choice because in the past, I have spent countless hours working and creating images and graphics for my app, only to second guess myself and start over. This process would put me behind deadline so I have learned to take his advice when it comes to graphics and design.</p>
                     
                     <p id= "last">You should have a clear idea where you are going with your app so jotting down criteria for your app and researching how to meet that criteria before you actually start developing your app is beneficial.</p>
                     
                     
-                    <!--FOOOTER-->
+                    <!--FOOTER-->
                     <footer data-role="footer" data-position="fixed" data-theme="c">
                     
                     <!--NAVBAR-->
@@ -324,7 +539,7 @@
                     <li>Mouse required for navigation</li>
                     <li>Page layout causing confusing screen reader feedback</li>
                     <li>Pop-up frustration</li>
-                    <li>table wonÕt read linearly</li>
+                    <li>table won’t read linearly</li>
                     <li>Screen reader crash</li>
                     <li>Conflict between screen reader and application</li>
                     </ol>
@@ -335,11 +550,11 @@
                     
                     iOS 5 has some accessibility features such as the following:</strong>
                     
-                    <p>VoiceOver - a system that allows people with visual impairments to navigate the touchscreen of an iOS device. Switch it on and your iOS device speaks to you, telling you whatÕs under your fingers as you touch areas of the device.</p>
+                    <p>VoiceOver - a system that allows people with visual impairments to navigate the touchscreen of an iOS device. Switch it on and your iOS device speaks to you, telling you what’s under your fingers as you touch areas of the device.</p>
                     
                     <p>Zoom - Enable it and you can zoom the screen by double tapping with three fingers. To zoom out, use this same gesture. To move around a zoomed screen, drag three fingers.</p>
                     
-                    <p>Large Text Ð Enlarges text for your app.</p>
+                    <p>Large Text – Enlarges text for your app.</p>
                     
                     <p>AssistiveTouch - Tap it, and a gray overlay window appear from which you can select Gestures, Device, Home, and Favorites icons.</p>
                     
@@ -348,11 +563,11 @@
                     
                     <p>Text-to-speech - synthesizes speech from text for immediate playback or to create a sound file.</p>
                     
-                    <p>Haptic feedback Ð a tacile feedback technology which takes advantage of the sense of touch by applying forces, vibrations, or motions to the user.</p>
+                    <p>Haptic feedback – a tacile feedback technology which takes advantage of the sense of touch by applying forces, vibrations, or motions to the user.</p>
                     
                     <p>Gesture navigation - gestures allow users to interact with your app by manipulating the screen objects you provide.</p>
                     
-                    <p>Trackball and directional-pad navigation Ð clickable trackball that users can move in any director. A clickable d-pad that allows users to navigate in four directions.</p>
+                    <p>Trackball and directional-pad navigation – clickable trackball that users can move in any director. A clickable d-pad that allows users to navigate in four directions.</p>
                     
                     <strong>Android developers can also build their own accessibility services, which can provide enhanced usability features such as:</strong>
                     
@@ -366,49 +581,7 @@
                     
                     <p>Mobile Accessibility is a screen-access application which allows people who are blind or have low vision to use an Android phone in an intuitive, easy and simple way.</p>
                     
-                    <p>VoiceOver is a gesture-based screen reader that lets you enjoy the fun and simplicity of iOS even if you canÕt see the screen.</p>
-                    
-                    <!--FOOOTER-->
-                    <footer data-role="footer" data-position="fixed" data-theme="c">
-                    
-                    <!--NAVBAR-->
-                    <section data-role="navbar">
-                    <ul>
-                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
-                    </li>
-                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
-                    </li>
-                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
-                    </ul>
-                    </section>
-                    <!-- /NAVBAR -->
-                    
-                    </footer>
-                    <!--/FOOTER-->
-                    
-                    </section>
-                    
-                    
-                    <!--INSTAGRAM-->
-                    
-                    <section id="instagram" data-role="page" data-add-back-btn="true">
-                    
-                    <h1>Michele Laramore  AVF 1309</h1>
-                    
-                    <div>
-                    <!--HEADER IMAGE-->
-                    <img class = "header" src="images/APPetizing-header-3.png" alt = "App-etizing foods">
-                    </div>
-                    
-                    <div id = "polaroid">
-                    <figcaption>
-                    
-                    </figcaption>
-                    <ul id="data-output">
-                    <li id="data-msg"><h2>Searching Instagram...</h2></li>
-                    
-                    </ul>
-                    </div>
+                    <p>VoiceOver is a gesture-based screen reader that lets you enjoy the fun and simplicity of iOS even if you can’t see the screen.</p>
                     
                     <!--FOOTER-->
                     <footer data-role="footer" data-position="fixed" data-theme="c">
@@ -431,52 +604,18 @@
                     </section>
                     
                     
-                    <!--GOOGLE MAPS-->
-                    
-                    <section id="googlemaps" data-role="page" data-add-back-btn="true">
-                    
-                    <h1>Michele Laramore  AVF 1309</h1>
-                    
-                    <div>
-                    <!--HEADER IMAGE-->
-                    <img class = "header" src="images/APPetizing-header-3.png" alt = "App-etizing foods">
-                    </div>
-                    
-                    <div id="map-canvas"></div>
-                    
-                    
-                    <!--FOOTER-->
-                    <footer data-role="footer" data-position="fixed" data-theme="c">
-                    
-                    <!--NAVBAR-->
-                    <section data-role="navbar">
-                    <ul>
-                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
-                    </li>
-                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
-                    </li>
-                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
-                    </ul>
-                    </section>
-                    <!-- /NAVBAR -->
-                    
-                    </footer>
-                    <!--/FOOTER-->
-                    
-                    </section>
-                    
-                    
+                                      
                     <!--jQuery, jQuery Mobile, JavaScript-->
                     <script src="js/jquery-2.0.3.min.js"></script>
                     <script src="js/phonegap.js"></script>
                     <script src="js/main.js"></script>     
                     <script src="js/jquery.mobile-1.3.2.min.js"></script>
-                    <script src="js/libs/jquery.validate.js"></script>
                     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCU6CN3Vmp7Yuv0QpeFZbJhWocb_NnB-nY&sensor=false&callback=initialize";
-                    document.body.appendChild(script);>
-                    </script>    
-                    
-                    
+                        document.body.appendChild(script);>
+            </script>
+
+            </script>
+
                     </body>
     
 </html>
