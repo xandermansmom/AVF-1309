@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -49,6 +48,9 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		E6AA88E32F74414185BC5F16 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9E0DC7B7264A61892D1C2F /* CDVJpegHeaderWriter.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		BDF6DFA4992B44769F7864DF /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D04B764E4E41494FAC50D630 /* CDVInAppBrowser.m */; };
+		2234C19FBE27404FB79770F5 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C5496AA43347AC8A31ABD9 /* CDVSplashScreen.m */; };
+		78B7C45C26004629B4FE858F /* CDVGlobalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A14A1406034A3C8D8AB2FC /* CDVGlobalization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,12 @@
 		E85814AECC7E47AFAF5A54D9 /* CDVCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVCamera.m; path = org.apache.cordova.core.camera/CDVCamera.m; sourceTree = "<group>"; };
 		F0298204753A4439ADE6C678 /* CDVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = org.apache.cordova.core.geolocation/CDVLocation.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = appEtizing/config.xml; sourceTree = "<group>"; };
+		D04B764E4E41494FAC50D630 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "org.apache.cordova.core.inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F1F5E8141579401E87935C05 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "org.apache.cordova.core.inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		C4C5496AA43347AC8A31ABD9 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.core.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		74EA7DB8BDD846BBB1064CC9 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.core.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		67A14A1406034A3C8D8AB2FC /* CDVGlobalization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVGlobalization.m"; path = "org.apache.cordova.core.globalization/CDVGlobalization.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		FC72ED2D2246453CA1C072A6 /* CDVGlobalization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVGlobalization.h"; path = "org.apache.cordova.core.globalization/CDVGlobalization.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +285,12 @@
 				9160BB83FC57418FAB4BD79F /* CDVExif.h */,
 				49E06D7CD4CD443EA408607B /* CDVAccelerometer.m */,
 				5886F604E9BD463AB2C3F1D5 /* CDVAccelerometer.h */,
+				D04B764E4E41494FAC50D630 /* CDVInAppBrowser.m */,
+				F1F5E8141579401E87935C05 /* CDVInAppBrowser.h */,
+				C4C5496AA43347AC8A31ABD9 /* CDVSplashScreen.m */,
+				74EA7DB8BDD846BBB1064CC9 /* CDVSplashScreen.h */,
+				67A14A1406034A3C8D8AB2FC /* CDVGlobalization.m */,
+				FC72ED2D2246453CA1C072A6 /* CDVGlobalization.h */,
 			);
 			name = Plugins;
 			path = appEtizing/Plugins;
@@ -351,7 +365,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "appEtizing" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -448,6 +462,9 @@
 				B85F32C259A54C439B61F222 /* CDVCamera.m in Sources */,
 				E6AA88E32F74414185BC5F16 /* CDVJpegHeaderWriter.m in Sources */,
 				B1118CAA964F40CBABF6611F /* CDVAccelerometer.m in Sources */,
+				BDF6DFA4992B44769F7864DF /* CDVInAppBrowser.m in Sources */,
+				2234C19FBE27404FB79770F5 /* CDVSplashScreen.m in Sources */,
+				78B7C45C26004629B4FE858F /* CDVGlobalization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

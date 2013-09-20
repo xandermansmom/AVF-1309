@@ -63,7 +63,7 @@
                     <!--INSTAGRAM-->
                     <a href="#instagram" data-role="button" data-theme="c" data-ajax="false">Instagram</a>
                     
-                    <!--MAPQUEST-->
+                    <!--GOOGLE MAPS-->
                     <a href="#googlemaps" data-role="button" data-theme="c" data-ajax="false">Google Maps</a>
                     </div>
                     
@@ -73,14 +73,14 @@
                     <!--CAMERA-->
                     <a href="#camera" data-role="button" data-theme="c" data-ajax="false">Camera</a>
                     
-                    <!--GEOLOCATION-->
-                    <a href="#geolocation" data-role="button" data-theme="c" data-ajax="false">Geolocation</a>
+                    <!--IN APP BROWSER-->
+                    <a href="#browser" data-role="button" data-theme="c" data-ajax="false">Browser</a>
                     
                     <!--ACCELEROMETER-->
-                    <a href="#accelerometer" data-role="button" data-theme="c" data-ajax="false">Accelerometer</a>
+                    <a href="#accelerometer" data-role="button" data-theme="c">Accelerometer</a>
                     
-                    <!--STORAGE-->
-                    <a href="#storage" data-role="button" data-theme="c" data-ajax="false">Storage</a>
+                    <!---->
+                    <a href="#" data-role="button" data-theme="c" data-ajax="false"></a>
                     
                     </div>
                     
@@ -321,7 +321,6 @@
                     <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
                     <button onclick="getPhoto(pictureSource.PHOTOALBUM);">From Photo Album</button><br>
                                         
-                                      <!--put image here-->
                     
                     <!--FOOTER-->
                     <footer data-role="footer" data-position="fixed" data-theme="c">
@@ -343,16 +342,14 @@
                     
                     </section>
                     
-                    <!--GEOLOCATION-->
+                    <!--IN APP BROWSER-->
                     
-                    <section id="geolocation" data-role="page" data-add-back-btn="true">
+                    <section id="browser" data-role="page" data-add-back-btn="true">
                     
                     <header data-role="header" data-theme="c">
-                    <h1>Geolocation</h1>
+                    <h1>In App Browser</h1>
                     </header>
-                    
-                        <p id="geolocation">Watching geolocation...</p>
-                        <button onclick="clearWatch();">Clear Watch</button>
+                        
                         
                     <!--FOOTER-->
                     <footer data-role="footer" data-position="fixed" data-theme="c">
@@ -373,44 +370,42 @@
                     <!--/FOOTER-->
                     
                     </section>
-                    
-                    <!--ACCELEROMETER-->
-                    
-                    <section id="accelerometer" data-role="page" data-add-back-btn="true">
-                    
-                    <header data-role="header" data-theme="c">
-                    <h1>Accelerometer</h1>
-                    </header>
-                    
-                        <p>getCurrentAcceleration</p>
-                    
-                    <!--FOOTER-->
-                    <footer data-role="footer" data-position="fixed" data-theme="c">
-                    
-                    <!--NAVBAR-->
-                    <section data-role="navbar">
+        
+        <!--ACCELEROMETER-->
+        
+        <section id="accelerometer" data-role="page" data-add-back-btn="true">
+            
+            <header data-role="header" data-theme="c">
+                <h1>Accelerometer</h1>
+            </header>
+            
+            
+            <!--FOOTER-->
+            <footer data-role="footer" data-position="fixed" data-theme="c">
+                
+                <!--NAVBAR-->
+                <section data-role="navbar">
                     <ul>
-                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
-                    </li>
-                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
-                    </li>
-                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
-                    </ul>
-                    </section>
-                    <!-- /NAVBAR -->
-                    
-                    </footer>
-                    <!--/FOOTER-->
-                    
-                    </section>
-                    
-                    
-                    <!--STORAGE-->
-                    
-                    <section id="storage" data-role="page" data-add-back-btn="true">
+                        <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                        </li>
+                        <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                        </li>
+                        <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                            </ul>
+                </section>
+                <!-- /NAVBAR -->
+                
+            </footer>
+            <!--/FOOTER-->
+            
+        </section>
+        
+                    <!--SPLASH SCREEN-->
+        
+                    <section id="splashscreen" data-role="page" data-add-back-btn="true">
                     
                     <header data-role="header" data-theme="c">
-                    <h1>Storage</h1>
+                    <h1>Splash Screen</h1>
                     </header>
                     
                     <!--image here-->
@@ -613,9 +608,8 @@
                     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCU6CN3Vmp7Yuv0QpeFZbJhWocb_NnB-nY&sensor=false&callback=initialize";
                         document.body.appendChild(script);>
             </script>
-
-            </script>
-
+                    
+        
                     </body>
     
 </html>

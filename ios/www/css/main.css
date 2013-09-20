@@ -185,7 +185,7 @@ height: 25px;
 
 #polaroid figcaption{
 @media screen text-align: center;
-font-size: 3vmin;
+font-size: .75em;
 line-height: .5em;
 color: #a02023;
 padding-top: 5%;
