@@ -171,7 +171,7 @@ background-color: rgba(249,243, 243 ,0.3);
 }
 
 #polaroid figure:nth-child(even):before {
-left:150px;
+left:100px;
 top: -15px;
 width: 55px;
 height: 25px;
@@ -184,10 +184,8 @@ height: 25px;
 /*text*/
 
 #polaroid figcaption{
-@media screentext-align: center;
-position: relative;
-overflow: hidden;
-width: 100%;
+@media screen text-align: center;
+font-size: .05em;
 line-height: .5em;
 color: #a02023;
 padding-top: 5%;
@@ -206,5 +204,13 @@ height: 250px;
 box-shadow:         3px 3px 5px 1px #000;
 }
 
+/*CAMERA*/
 
-      
+#smallImage {
+width:60px;
+height:60px; 
+}   
+
+#largeImage {
+display: none;
+}

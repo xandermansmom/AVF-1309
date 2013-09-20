@@ -69,6 +69,34 @@ module.exports = [
         "clobbers": [
             "navigator.accelerometer"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.inappbrowser/www/InAppBrowser.js",
+        "id": "org.apache.cordova.core.inappbrowser.InAppBrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.core.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.globalization/www/GlobalizationError.js",
+        "id": "org.apache.cordova.core.globalization.GlobalizationError",
+        "clobbers": [
+            "window.GlobalizationError"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.core.globalization/www/globalization.js",
+        "id": "org.apache.cordova.core.globalization.globalization",
+        "clobbers": [
+            "navigator.globalization"
+        ]
     }
 ]
 });

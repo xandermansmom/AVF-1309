@@ -13,6 +13,9 @@
     </feature>
     <access origin="http://127.0.0.1*" />
     <access origin="*" />
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+    <plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="permissions" value="none" />
@@ -29,4 +32,22 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
 </widget>

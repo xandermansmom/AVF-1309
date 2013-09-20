@@ -1,26 +1,6 @@
 //Michele Laramore
 //AVF 1309
 
-//DECLARE FUNCTIONS FOR STORAGE
-function populateDB(tx) {
-    tx.executeSql('DROP TABLE IF EXISTS DEMO');
-    tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-    tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
-    tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-}
-
-// Transaction error callback
-//
-function errorCB(tx, err) {
-    alert("Error processing SQL: "+err);
-}
-
-// Transaction success callback
-//
-function successCB() {
-    alert("success!");
-}
-
 
 
 //INSTAGRAM
@@ -73,35 +53,32 @@ function initialize()
 
 //NATIVE FEATURES
 
+var pictureSource,
+destinationType,
+runAcc,
+runBrowser;
 
-//ON DEVICE READY DO THIS FUNCTION
-var onSuccess;
-var onError;
-
+// device APIs are available
 function onDeviceReady() {
-    var pictureSource=navigator.camera.PictureSourceType;
-    var destinationType=navigator.camera.DestinationType;
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    navigator.accelerometer.getCurrentAcceleration (onSuccess, onError);
-    var db = window.openDatabase("test", "1.0", "Test DB", 1000000);
-    db.transaction(populateDB, errorCB, successCB);
+    
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
+    $("#accelerometer").on("pageinit", runAcc);
+    $("#browser").on("pageinit", runBrowser);
+    
 }
-
-
-//ADD EVENT LISTENER
-document.addEventListener("deviceready", onDeviceReady, false);
-
+// Wait for device API libraries to load
+document.addEventListener("deviceready",onDeviceReady,false);
 
 //CAMERA
 
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
-
-
 // Called when a photo is successfully retrieved
-
 function onPhotoDataSuccess(imageData) {
-       var smallImage = document.getElementById('smallImage');
+    
+    console.log(imageData);
+    
+    // Get image handle
+    var smallImage = document.getElementById('smallImage');
     
     // Unhide image elements
     smallImage.style.display = 'block';
@@ -111,9 +88,10 @@ function onPhotoDataSuccess(imageData) {
 }
 
 // Called when a photo is successfully retrieved
-//
 function onPhotoURISuccess(imageURI) {
-     console.log(imageURI);
+    
+    // Uncomment to view the image file URI
+    console.log(imageURI);
     
     // Get image handle
     var largeImage = document.getElementById('largeImage');
@@ -125,129 +103,95 @@ function onPhotoURISuccess(imageURI) {
     largeImage.src = imageURI;
 }
 
+// Called if something bad happens.
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+
 // A button will call this function
-var onFail;
 function capturePhoto() {
     
-    // Take picture using device camera and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+    // Take picture and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+                                destinationType: destinationType.DATA_URL });
 }
 
 // A button will call this function
-
 function capturePhotoEdit() {
-    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true });
+    // Take picture , allow edit, and retrieve image as base64-encoded string
+    
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+                                destinationType: destinationType.DATA_URL });
 }
 
 // A button will call this function
-//
+
 function getPhoto(source) {
+    
     // Retrieve image file location from specified source
+    
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
                                 destinationType: destinationType.FILE_URI,
                                 sourceType: source });
 }
 
-// Show image
-//
-function cameraCallback(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
-}
-
-// Called if something bad happens.
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-
-//GEOLOCATION//
-
-var geoMap;
-var handleNoGeolocation;
-
-function initialize() {
-    var mapOptions = {
-    zoom: 6,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    geoMap = new google.maps.Map(document.getElementById('map-draw'),
-                                 mapOptions);
-    
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-                                                 var pos = new google.maps.LatLng(position.coords.latitude,
-                                                                                  position.coords.longitude);
-                                                 
-                                                 var infowindow = new google.maps.InfoWindow({
-                                                                                             map: geoMap});
-                                                 
-                                                 map.setCenter(pos);
-                                                 }, function() {
-                                                 handleNoGeolocation(true);
-                                                 });
-    } else {
-        // Browser doesn't support Geolocation
-        handleNoGeolocation(false);
-    }
-}
-
-var content;
-function handleNoGeolocation(errorFlag) {
-    if (errorFlag) {
-        content = 'Error: The Geolocation service failed.';
-    }
-    var options = {
-    map: geoMap,
-    position: new google.maps.LatLng(60, 105),
-    content: content
-    };
-    
-    var infowindow = new google.maps.InfoWindow(options);
-    map.setCenter(options.position);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
 
 //ACCELEROMETER
 
 function onSuccess(acceleration) {
+    alert('Accelerometer has loaded!');
     alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
           'Acceleration Z: ' + acceleration.z + '\n' +
           'Timestamp: '      + acceleration.timestamp + '\n');
 }
-                       
+
 
 // onError: Failed to get the acceleration
 function onError() {
     alert('onError!');
 }
 
+var runAcc = function(){
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+};
 
-//STORAGE
+//IN APP BROWSER
 
-// Wait for device API libraries to load
+// Global InAppBrowser reference
+var iAppRef = null;
 
-document.addEventListener("deviceready", onDeviceReady, false);
+function iAppLoadStart(event) {
+    alert(event.type + ' - ' + event.url);
+}
 
-// Populate the database
+function iAppLoadStop(event) {
+    alert(event.type + ' - ' + event.url);
+}
 
+function iAppLoadError(event) {
+    alert(event.type + ' - ' + event.message);
+}
 
+function iAppClose(event) {
+    alert(event.type);
+    iAppRef.removeEventListener('loadstart', iAppLoadStart);
+    iAppRef.removeEventListener('loadstop', iAppLoadStop);
+    iAppRef.removeEventListener('loaderror', iAppLoadError);
+    iAppRef.removeEventListener('exit', iAppClose);
+}
 
+// device APIs are available
 
-
-
-
-
-
-
-
-
-
-
-
-
+var runBrowser = function(){
+    iAppRef = window.open('http://www.fullsail.edu', '_blank', 'location=yes');
+    iAppRef.addEventListener('loadstart', iAppLoadStart);
+    iAppRef.addEventListener('loadstop', iAppLoadStop);
+    iAppRef.removeEventListener('loaderror', iAppLoadError);
+    iAppRef.addEventListener('exit', iAppClose);
+};
 
 
 
