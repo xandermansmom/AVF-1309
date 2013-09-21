@@ -56,13 +56,16 @@ function initialize()
 var pictureSource,
 destinationType,
 runAcc,
-runBrowser;
+runBrowser,
+options;
 
 // device APIs are available
 function onDeviceReady() {
     
-    pictureSource=navigator.camera.PictureSourceType;
-    destinationType=navigator.camera.DestinationType;
+    var options = function () {
+        pictureSource=navigator.camera.PictureSourceType.CAMERA;
+        destinationType=navigator.camera.DestinationType.FILE_URI;};
+    
     $("#accelerometer").on("pageinit", runAcc);
     $("#browser").on("pageinit", runBrowser);
     
@@ -72,8 +75,9 @@ document.addEventListener("deviceready",onDeviceReady,false);
 
 //CAMERA
 
+
 // Called when a photo is successfully retrieved
-function onPhotoDataSuccess(imageData) {
+function cameraSuccess(imageData) {
     
     console.log(imageData);
     
@@ -90,7 +94,7 @@ function onPhotoDataSuccess(imageData) {
 // Called when a photo is successfully retrieved
 function onPhotoURISuccess(imageURI) {
     
-    // Uncomment to view the image file URI
+    //View the image file URI
     console.log(imageURI);
     
     // Get image handle
@@ -105,38 +109,45 @@ function onPhotoURISuccess(imageURI) {
 
 // Called if something bad happens.
 
-function onFail(message) {
+function cameraFail(message) {
     alert('Failed because: ' + message);
 }
 
 
 // A button will call this function
+//
 function capturePhoto() {
-    
-    // Take picture and retrieve image as base64-encoded string
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-                                destinationType: destinationType.DATA_URL });
+    // Take picture using device camera and retrieve image as base64-encoded string
+    navigator.camera.getPicture(cameraSuccess, cameraFail, {
+                                quality: 50,
+                                savetoPhotoAlbum: true
+                                });
 }
 
 // A button will call this function
 function capturePhotoEdit() {
     // Take picture , allow edit, and retrieve image as base64-encoded string
     
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-                                destinationType: destinationType.DATA_URL });
+    navigator.camera.getPicture(cameraSuccess, cameraFail, options,{
+                                quality: 50,
+                                allowEdit: true,
+                                savetoPhotoAlbum: true
+                                });
 }
 
-// A button will call this function
 
+
+// A button will call this function
 function getPhoto(source) {
     
     // Retrieve image file location from specified source
     
-    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+    navigator.camera.getPicture(onPhotoURISuccess, cameraFail, {
+                                quality: 50,
                                 destinationType: destinationType.FILE_URI,
-                                sourceType: source });
+                                sourceType: source
+                                });
 }
-
 
 //ACCELEROMETER
 
@@ -192,6 +203,10 @@ var runBrowser = function(){
     iAppRef.removeEventListener('loaderror', iAppLoadError);
     iAppRef.addEventListener('exit', iAppClose);
 };
+
+
+
+
 
 
 
