@@ -54,4 +54,5 @@
        <feature name="Globalization">
         <param name="ios-package" value="CDVGlobalization" />
     </feature>
+    <plugin name="Geolocation" value="CDVLocation" />
 </widget>

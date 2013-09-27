@@ -20,6 +20,7 @@
     <feature name="Globalization">
         <param name="android-package" value="org.apache.cordova.Globalization" />
     </feature>
+    <plugin name="Geolocation" value="CDVLocation" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />

@@ -4,6 +4,10 @@ AVF 1309
 */
 
 
+/*MEDIA QUERY – PORTAIT AND LANDSCAPE ORIENTATION IPAD*/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
 .ui-bar-c {
 border : #a02023 solid 1px;
 color : #cfc895;
@@ -39,6 +43,7 @@ height : 15%;
 h1.ui-title {
 color : #cfc895;
 }
+
 
 img.header {
 max-width: 100%;
@@ -184,7 +189,7 @@ height: 25px;
 /*text*/
 
 #polaroid figcaption{
-@media screen text-align: center;
+text-align: center;
 font-size: .75em;
 line-height: .5em;
 color: #a02023;
@@ -192,17 +197,27 @@ padding-top: 5%;
 padding-bottom: 5%;
 }
 
-#map-canvas {
-margin: 0;
+
+#map_canvas {
+width: 400px;
+height: 325px;margin: 0;
 margin-left: auto;
 margin-right: auto;
 margin-top: 5%;
-width: 325px;
-height: 250px;
 -moz-box-shadow:    3px 3px 5px 1px #000;
 -webkit-box-shadow: 3px 3px 5px 1px #000;
 box-shadow:         3px 3px 5px 1px #000;
 }
+
+/*youtube*/
+
+#player  {
+padding-top: 20px;
+width: 75%;
+margin: 0 auto;
+display: block;
+}
+
 
 /*CAMERA*/
 
@@ -214,3 +229,6 @@ height:60px;
 #largeImage {
 display: none;
 }
+
+}
+

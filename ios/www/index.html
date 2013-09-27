@@ -12,7 +12,7 @@
             <meta name="keywords" content="rating, dishes">
                 <meta name="description" content="Meal rating application">
                     <meta name="robots" content="index, follow">
-                        <meta name="viewport" content="user-scalable=no, width=device-width">
+                        <meta name="viewport" content="user-scalable=no, width=device-width, maximum-scale=1.0">
                             <meta name="author" content="Michele Laramore">
                                 
                                 <!--Stylesheet-->
@@ -63,11 +63,14 @@
                     <!--INSTAGRAM-->
                     <a href="#instagram" data-role="button" data-theme="c" data-ajax="false">Instagram</a>
                     
-                    <!--GOOGLE MAPS-->
-                    <a href="#googlemaps" data-role="button" data-theme="c" data-ajax="false">Google Maps</a>
+                    <!--YOUTUBE-->
+                    <a href="#youtube" data-role="button" data-theme="c" data-ajax="false">YouTube</a>
+                    
                     </div>
                     
                     <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
+                    
+            
                     <h3>Native Features</h3>
                     
                     <!--CAMERA-->
@@ -82,6 +85,17 @@
                     <!---->
                     <a href="#" data-role="button" data-theme="c" data-ajax="false"></a>
                     
+                    </div>
+                    
+                    <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
+                    
+                    <h3>Mashups</h3>
+                    
+                    <!--Geolocation and Google Maps-->
+                    <a href="#geolocation" data-role="button" data-theme="c">Google Maps with Geolocation</a>
+                    
+                    <!--Instagram and Google Maps-->
+                    <a href="#picMap" data-role="button" data-theme="c">Google Maps with Instagram</a>
                     </div>
                     
                     <div data-role="collapsible" data-collapsed = "true" data-theme="c" data-content-theme="c">
@@ -209,9 +223,6 @@
                     <!--DISPLAY DATA-->
                     <section data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true">
                     
-                    
-                    
-                    
                     </section>
                     <!--/END DISPLAY DATA-->
                     
@@ -274,18 +285,17 @@
                     <!--/FOOTER-->
                     
                     </section>
+                   
                     
+                    <!--YOUTUBE-->
                     
-                    <!--GOOGLE MAPS-->
-                    
-                    <section id="googlemaps" data-role="page" data-add-back-btn="true">
+                    <section id ="youtube" data-role="page" data-add-back-btn="true">
                     
                     <header data-role="header" data-theme="c">
-                    <h1>Google Maps</h1>
+                    <h1>YouTube</h1>
                     </header>
                     
-                    <div id="map-canvas"></div>
-                    
+                    <div id="player"></div>
                     
                     <!--FOOTER-->
                     <footer data-role="footer" data-position="fixed" data-theme="c">
@@ -306,7 +316,6 @@
                     <!--/FOOTER-->
                     
                     </section>
-                    
                     
                     <!--CAMERA-->
                     
@@ -399,37 +408,34 @@
             
         </section>
         
-                    <!--SPLASH SCREEN-->
-        
-                    <section id="splashscreen" data-role="page" data-add-back-btn="true">
-                    
-                    <header data-role="header" data-theme="c">
-                    <h1>Splash Screen</h1>
-                    </header>
-                    
-                    <!--image here-->
-                    
-                    
-                    <!--FOOTER-->
-                    <footer data-role="footer" data-position="fixed" data-theme="c">
-                    
-                    <!--NAVBAR-->
-                    <section data-role="navbar">
+        <!--GOOGLE MAPS WITH GEOLOCATION-->
+        <section id="geolocation" data-role="page" data-add-back-btn="true">
+            <h1>Google Maps with Geolocation</h1>
+
+            <div id="map_canvas"></div>
+            <div id="locationinfo"></div>
+            
+            <!--FOOTER-->
+            <footer data-role="footer" data-position="fixed" data-theme="c">
+                
+                <!--NAVBAR-->
+                <section data-role="navbar">
                     <ul>
-                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
-                    </li>
-                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
-                    </li>
-                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
-                    </ul>
-                    </section>
-                    <!-- /NAVBAR -->
-                    
-                    </footer>
-                    <!--/FOOTER-->
-                    
-                    </section>
-                         
+                        <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                        </li>
+                        <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                        </li>
+                        <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                            </ul>
+                </section>
+                <!-- /NAVBAR -->
+                
+            </footer>
+            <!--/FOOTER-->
+            
+        </section>
+        
+                                            
                     <!--DISCUSSION POST - WEEK 1-->
                     <section id="intent" data-role="page" data-add-back-btn="true">
                     
@@ -517,11 +523,11 @@
                     <h1>Accessibility</h1>
                     </header>
                     
-                    <strong>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with JQuery, for instance)</strong>
+                    <p>What are some of the ways that you could change your HTML on your Demo app to be more accessible? (Remember, you can use the Section tag with JQuery, for instance)</p>
                     
                     <p>Since Full Sail has always taught us how to build our apps to meet accessibility criteria, I don't really see anything that could improve my app's accessibility. I've always provided alt text with my images, used well-positioned labels on my form fields, etc.<p>
                     
-                    <strong>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</strong>
+                    <p>Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</p>
                     
                     <p>Some issues or frustrations that arise using a screen reader are:</p>
                     
@@ -540,9 +546,9 @@
                     
                     <p>Most of these issues can be fixed by just keeping a handy list of what not to do like for example (no alt text for images) just be sure to include alt text for your images and make sure the alt text is descriptive enough.  The rest is pretty much the same. Being aware of possible issues that can arise and avoiding it.</p>
                     
-                    <strong>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.
+                    <p>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.
                     
-                    iOS 5 has some accessibility features such as the following:</strong>
+                    iOS 5 has some accessibility features such as the following:</p>
                     
                     <p>VoiceOver - a system that allows people with visual impairments to navigate the touchscreen of an iOS device. Switch it on and your iOS device speaks to you, telling you what’s under your fingers as you touch areas of the device.</p>
                     
@@ -553,7 +559,7 @@
                     <p>AssistiveTouch - Tap it, and a gray overlay window appear from which you can select Gestures, Device, Home, and Favorites icons.</p>
                     
                     
-                    <strong>Android has some of the following accessibility features:</strong>
+                    <p>Android has some of the following accessibility features:</p>
                     
                     <p>Text-to-speech - synthesizes speech from text for immediate playback or to create a sound file.</p>
                     
@@ -563,7 +569,7 @@
                     
                     <p>Trackball and directional-pad navigation – clickable trackball that users can move in any director. A clickable d-pad that allows users to navigate in four directions.</p>
                     
-                    <strong>Android developers can also build their own accessibility services, which can provide enhanced usability features such as:</strong>
+                    <p>Android developers can also build their own accessibility services, which can provide enhanced usability features such as:</p>
                     
                     <ul>
                     <li>Audio prompting</li> 
@@ -571,7 +577,7 @@
                     <li>Alternative navigation modes</li> 
                     </ul>
                     
-                    <strong>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</strong>
+                    <p>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.
                     
                     <p>Mobile Accessibility is a screen-access application which allows people who are blind or have low vision to use an Android phone in an intuitive, easy and simple way.</p>
                     
@@ -596,19 +602,98 @@
                     <!--/FOOTER-->
                     
                     </section>
-                    
-                    
-                                      
+        
+        <!--DISCUSSION POST - WEEK 3-->
+        <section id="research" data-role="page" data-add-back-btn="true">
+            
+            <header data-role="header" data-theme="c">
+                <h1>Industry Research</h1>
+            </header>
+        
+        
+        	<p>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</p>
+            
+        <p>In the U.S., the top selling categories are dependent on who is using the app and what type of device they are using.  For moms, the most popular categories are games, then social networking, fitness apps and then personal assistant apps like shopping tools.</p>
+            
+        <p>However, the most popular apps for young adults are lifestyle apps like Sports, Health and Fitness then multimedia apps like music, media and entertainment.
+        Due to the fact that Japan’s exclusive iPhone provider, SoftBank Mobile, does not release stats or official data, finding something more current was difficult.</p>
+            
+        <p>However, according to my research, the top selling apps in Japan are first and foremost, games, and then second, the productivity apps.
+        The top selling app in London right now fits the personal assistant category. It is called Hailo and is a mobile app that enables the user to order a licensed cab and bill your credit car at the taxi door. However, games are also on the top rated mobile app category in the U.K.</p>
+            
+        <p>	Based on your three answers above, what might you infer about each of the markets listed?</p>
+            
+        <p>Based on these answers, the categories of preference for each country is dependent on the lifestyles of the people involved.</p>
+            
+        <p>For instance, in the U.S., the popular apps vary dependent on whether the user is a mom, or a single young adult.  Moms chose games, social networking, fitness apps and then personal assistant apps.  This tells me they like to take micro-breaks in between their busy parenting schedule, they like to stay in shape, and they like apps that help them take care of their day-to-day routines like shopping. However, young adults like apps that help them stay in shape and apps that provide entertainment.</p>
+            
+        <p>Japan’s number one choice is for gaming apps but their second choice is productivity apps. This tells me, they are a very productive country that likes to play games when they take micro-breaks in between their workdays.</p>
+            
+        <p>Britain’s most popular app at the moment is a personal assistant app called Hailo.  These types of apps are timesaving apps that tell me Londoners value their time but in between times of productivity, they also choose game apps for micro-breaks.</p>
+            
+        	<p>What are the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?</p>
+            
+        <p>In the U.S. a price comparison of bandwidth use varies across carriers with the lowest rate per GB is $7.25 - $7.50 per GB meaning 5 GBs of data would costs between $36.25 and $37.50 but according to my research, average price across the board per GB is $20.25, which seems pretty excessive. This would mean 5GBs would total about $101.25.</p>
+            
+        <p>In Japan the benchmark price for LTE in Japan is 7GB for ¥5,985 or $75. Breaking this down it would cost around $10.71 per GB or $53 for 5GB.</p>
+            
+        <p>In Great Britain, the average cost for 5GBs is around £34 .80 or $55.85. As far as I can tell, everyone is gravitating towards unlimited data usage plans meaning there is no cap on usage.</p>
+            
+        <p>I don’t believe this will impact development because as the demand for bandwidth increases, the needs are being met without increasing the cost.</p>
+            
+        <p>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</p>
+            
+        <p>Because there is some variety in the market as far as app categories in the three countries, even though game apps do garner some popularity in all three countries, I don’t see game apps as having a corner on the growing market.</p>
+        
+        <p>According to my research, Generation Y (ages 25- 34) is the largest audience for mobile phones and mobile apps.  Even though games are popular with this group of people, multimedia apps (music, movies, etc.), social networking apps and leisure and lifestyle apps tend to be the most popular as well as mashups of news apps.</p>
+        
+        <h3>Works Cited:</h3>
+        
+        <p>Farago, Peter. (, June). Smartphone-apps-in-europe-the-8th-mass-market-media-channel [Web log message]. Retrieved from <a href ="http://blog.flurry.com/bid/63381/Smartphone-Apps-in-Europe-The-8th-Mass-Market-Media-Channel">Smartphone Apps in Europe the 8th Mass Market Media Channel</a></p>
+        
+        <p>Fields, B. (n.d.). Retrieved from <a href = "http://www.startupnation.com/business-articles/9011/1/marketing-GenY.htm">Marketing GenY</a></p>
+        
+       <p> Gordon, Mary, K. S. (, August 2013). The flurry blog [Web log message]. Retrieved from <a href="http://blog.flurry.com/?Tag=App">Flurry</a></p>
+        
+        <p>Louis, Tristan. (n.d.). Retrieved from <a href="http://www.forbes.com/sites/tristanlouis/2013/09/22/how-much-mobile-bandwidth-costs-but-why/">How Much Mobile Bandwidth Costs</a></p>
+        
+        
+       <p> Myers, Courtney. (n.d.). Retrieved from <a href="http://thenextweb.com/uk/2013/06/02/londons-top-10-mobile-startups/">London's Top 10 MObile Startups</a></p>
+            '
+        <p>Toto Serkan. (0). Retrieved from <a href="http://techcrunch.com/2009/09/06/japans-32-best-iphone-apps-all-available-in-english/">Japans 32 Best Iphone Apps</a></p>
+        
+        <p>(n.d.). Retrieved from <a href="http://www.japanmobiletech.com/2012/10/lte-data-in-japan-costs-10gb.html">LTE Data in Japan Costs</a></p>
+        
+        
+        <!--FOOTER-->
+        <footer data-role="footer" data-position="fixed" data-theme="c">
+            
+            <!--NAVBAR-->
+            <section data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home" data-transition="fade" data-inline="true">Home</a>
+                    </li>
+                    <li><a href="#add" data-icon="plus" data-transition="fade" data-inline="true">Add</a>
+                    </li>
+                    <li><a href="#view" data-icon="info" data-transition="fade" data-inline="true">View</a>
+                        </ul>
+            </section>
+            <!-- /NAVBAR -->
+            
+        </footer>
+        <!--/FOOTER-->
+        
+        </section>
+        
+        
                     <!--jQuery, jQuery Mobile, JavaScript-->
                     <script src="js/jquery-2.0.3.min.js"></script>
                     <script src="js/phonegap.js"></script>
-                    <script src="js/main.js"></script>     
+                    <script src="js/main.js"></script>
                     <script src="js/jquery.mobile-1.3.2.min.js"></script>
-                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCU6CN3Vmp7Yuv0QpeFZbJhWocb_NnB-nY&sensor=false&callback=initialize";
-                        document.body.appendChild(script);>
-            </script>
-                    
-        
+                    <script src="js/libs/googleapis.js"></script>
+            
+                                              
                     </body>
     
 </html>
