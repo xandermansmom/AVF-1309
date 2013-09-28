@@ -19,7 +19,13 @@
     </feature>
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
+<<<<<<< HEAD
     </feature>
+=======
+        <feature name="SplashScreen">
+            <param name="ios-package" value="CDVSplashScreen" />
+        </feature>    </feature>
+>>>>>>> gh-pages
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />

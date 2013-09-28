@@ -265,4 +265,7 @@ var runBrowser = function(){
     iAppRef.addEventListener('exit', iAppClose);
 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> gh-pages
