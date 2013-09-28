@@ -51,8 +51,7 @@
     <feature name="Accelerometer">
         <param name="ios-package" value="CDVAccelerometer" />
     </feature>
-       <feature name="Globalization">
-        <param name="ios-package" value="CDVGlobalization" />
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
     </feature>
-    <plugin name="Geolocation" value="CDVLocation" />
 </widget>
