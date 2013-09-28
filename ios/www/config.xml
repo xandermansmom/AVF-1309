@@ -17,10 +17,11 @@
     <feature name="Accelerometer">
         <param name="ios-package" value="CDVAccelerometer" />
     </feature>
-    <feature name="Globalization">
-        <param name="android-package" value="org.apache.cordova.Globalization" />
-    </feature>
-    <plugin name="Geolocation" value="CDVLocation" />
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+        <feature name="SplashScreen">
+            <param name="ios-package" value="CDVSplashScreen" />
+        </feature>    </feature>
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />

@@ -33,35 +33,48 @@ $('#instagram').on('pageinit', function() {
                    
                    });
 
-
 //GOOGLE MAPS
-var google;
-var map;
 
-function initialize()
-{
-    var mapProp = {
-    center:new google.maps.LatLng(31.586040, -97.086380),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
+
+function geoLocate() {
+    var output = document.getElementById("output");
+    
+    if (!navigator.geolocation){
+        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+        return;
+    }
+    
+    function success(position) {
+        var latitude  = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+        
+        var mapImg = new Image();
+        mapImg.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+        
+        output.appendChild(mapImg);
     };
-    var map=new google.maps.Map(document.getElementById("map-canvas"),mapProp);
     
+    function error() {
+        output.innerHTML = "Sorry, we are unable to retrieve your location";
+    };
     
-    google.maps.event.addDomListener(window, 'load', initialize);
-};
+    output.innerHTML = "<p>Locating…</p>";
+    
+    navigator.geolocation.getCurrentPosition(success, error);
+}
 
 //YOUTUBE
 
-//  This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-//  This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+// create iFrame and YouTube Player
+
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -76,7 +89,7 @@ function onYouTubeIframeAPIReady() {
                            });
 }
 
-//  The API will call this function when the video player is ready.
+// Calls function when player is ready
 function onPlayerReady(event) {
     event.target.playVideo();
 }
@@ -115,9 +128,9 @@ function onDeviceReady() {
     
     $("#accelerometer").on("pageinit", runAcc);
     $("#browser").on("pageinit", runBrowser);
-    $("#youTube").on("pageinit", playVideo);
-    
+    $("#youtube").on("pageinit", onPlayerReady);
 }
+
 // Wait for device API libraries to load
 document.addEventListener("deviceready",onDeviceReady,false);
 
@@ -251,11 +264,4 @@ var runBrowser = function(){
     iAppRef.removeEventListener('loaderror', iAppLoadError);
     iAppRef.addEventListener('exit', iAppClose);
 };
-
-
-
-
-
-
-
 

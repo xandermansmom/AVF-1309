@@ -198,15 +198,13 @@ padding-bottom: 5%;
 }
 
 
-#map_canvas {
-width: 400px;
-height: 325px;margin: 0;
+#output {
+margin: 0;
 margin-left: auto;
 margin-right: auto;
 margin-top: 5%;
--moz-box-shadow:    3px 3px 5px 1px #000;
--webkit-box-shadow: 3px 3px 5px 1px #000;
-box-shadow:         3px 3px 5px 1px #000;
+width: 325px;
+height: 250px;
 }
 
 /*youtube*/
