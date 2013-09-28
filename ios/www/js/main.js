@@ -81,7 +81,7 @@ function onYouTubeIframeAPIReady() {
                            height: '390',
                            width: '640',
                            videoId: 'Qq6q-AUxdKs',
-                           playerVars: { 'autoplay': 0, 'controls': 1, 'playlist':['Pf1frjJdrNc', 'KhdeKV7aWwc', '-t7Hwj8E7ME', 'AGGjubzw5ms']},
+                           playerVars: { 'controls': 1, 'playlist':['Pf1frjJdrNc', 'KhdeKV7aWwc', '-t7Hwj8E7ME', 'AGGjubzw5ms']},
                            events: {
                            'onReady': onPlayerReady,
                            'onStateChange': onPlayerStateChange
@@ -117,8 +117,8 @@ destinationType,
 runAcc,
 runBrowser,
 playVideo,
-options;
-
+options,
+connectionCheck;
 // device APIs are available
 function onDeviceReady() {
     
@@ -128,7 +128,7 @@ function onDeviceReady() {
     
     $("#accelerometer").on("pageinit", runAcc);
     $("#browser").on("pageinit", runBrowser);
-    $("#youtube").on("pageinit", onPlayerReady);
+    $('#connection').on("pageinit", connectionCheck);
 }
 
 // Wait for device API libraries to load
@@ -265,7 +265,26 @@ var runBrowser = function(){
     iAppRef.addEventListener('exit', iAppClose);
 };
 
-<<<<<<< HEAD
 
-=======
->>>>>>> gh-pages
+//CONNECTION
+var Connection;
+function connectionCheck() {
+    var connectType = navigator.connection.type;
+    
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+    
+    alert('Connection type: ' + states[connectType]);
+}
+
+
+
+
+

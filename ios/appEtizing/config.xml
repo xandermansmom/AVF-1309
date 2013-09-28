@@ -54,10 +54,10 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
-<<<<<<< HEAD
-</widget>
-=======
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
-    </feature></widget>
->>>>>>> gh-pages
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+</widget>
